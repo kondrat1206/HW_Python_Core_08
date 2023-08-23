@@ -60,7 +60,7 @@ def get_birthdays_per_week(users, now=now):
         name = user['name']
         birthday = user['birthday'].date()
         # Определяем день недели для его поздравления
-        day_of_week = (start_of_week + timedelta(days=(birthday.weekday() - start_of_week.weekday()) % 7)).strftime('%A')
+        day_of_week = birthday.strftime('%A')
         # Добавляем пользователя в словарь по дням недели
         birthdays_per_week[day_of_week].append(name)
     
